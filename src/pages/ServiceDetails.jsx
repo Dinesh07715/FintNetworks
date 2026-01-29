@@ -478,28 +478,28 @@ export default function ServiceDetails() {
 
                                 <div className="grid md:grid-cols-2 gap-10">
                                     <div className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp stagger-1 group">
-                                        <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                        <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             ✓
                                         </div>
                                         <p className="group-hover:text-slate-900 transition-colors duration-300"><b class="hover:text-blue-700 transition-colors duration-200">Enterprise-Grade Expertise:</b> Proven across industries and mission-critical systems.</p>
                                     </div>
 
                                     <div className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp stagger-2 group">
-                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             ✓
                                         </div>
                                         <p className="group-hover:text-slate-900 transition-colors duration-300"><b class="hover:text-blue-700 transition-colors duration-200">Custom-Built Solutions:</b> Tailored AI models and workflows aligned with business needs.</p>
                                     </div>
 
                                     <div className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp stagger-3 group">
-                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             ✓
                                         </div>
                                         <p className="group-hover:text-slate-900 transition-colors duration-300"><b class="hover:text-blue-700 transition-colors duration-200">End-to-End Delivery:</b> From AI strategy to deployment and optimization.</p>
                                     </div>
 
                                     <div className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp stagger-4 group">
-                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             ✓
                                         </div>
                                         <p className="group-hover:text-slate-900 transition-colors duration-300"><b class="hover:text-blue-700 transition-colors duration-200">Responsible AI:</b> Ethical, secure, and compliant AI development.</p>
@@ -587,7 +587,7 @@ export default function ServiceDetails() {
                                         "We provide digitally enhanced omni-channel experiences."
                                     ].map((text, i) => (
                                         <div key={i} className="bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp group flex gap-4">
-                                            <div className="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                            <div className="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                                 ✓
                                             </div>
                                             <p>{text}</p>
@@ -750,7 +750,7 @@ export default function ServiceDetails() {
 
                                 <div className="grid md:grid-cols-2 gap-10">
                                     <div className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp group">
-                                        <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                        <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             ✓
                                         </div>
                                         <p className="text-slate-700 group-hover:text-slate-900 transition-colors duration-300">
@@ -759,7 +759,7 @@ export default function ServiceDetails() {
                                     </div>
 
                                     <div className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp group">
-                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             ✓
                                         </div>
                                         <p className="text-slate-700 group-hover:text-slate-900 transition-colors duration-300">
@@ -768,7 +768,7 @@ export default function ServiceDetails() {
                                     </div>
 
                                     <div className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp group">
-                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             ✓
                                         </div>
                                         <p className="text-slate-700 group-hover:text-slate-900 transition-colors duration-300">
@@ -777,7 +777,7 @@ export default function ServiceDetails() {
                                     </div>
 
                                     <div className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp group">
-                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                        <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                             ✓
                                         </div>
                                         <p className="text-slate-700 group-hover:text-slate-900 transition-colors duration-300">
@@ -931,7 +931,7 @@ export default function ServiceDetails() {
                                         "Our integration services enable seamless data flow across multiple environments."
                                     ].map((text, i) => (
                                         <div key={i} className="flex gap-4 bg-white p-6 rounded-lg shadow-md hover-lift hover-glow animate-fadeInUp group">
-                                            <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">>
+                                            <div className="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                                                 ✓
                                             </div>
                                             <p className="text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{text}</p>
