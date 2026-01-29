@@ -6,6 +6,9 @@ import Footer from './components/Footer';
 import Blog from './components/Blog';
 import BlogDetail from './pages/BlogDetail';
 
+import ServiceDetails from "./pages/ServiceDetails";
+
+
 
 // Import all pages
 import {
@@ -78,14 +81,18 @@ function App() {
             <Route path="/about/leaders" element={<Leaders />} />
             
             {/* Services Routes */}
-            <Route path="/services/artificial-intelligence" element={<ArtificialIntelligence />} />
+            {/* <Route path="/services/artificial-intelligence" element={<ArtificialIntelligence />} />
             <Route path="/services/digital-experience" element={<DigitalExperience />} />
             <Route path="/services/data-analytics" element={<DataAnalytics />} />
             <Route path="/services/enterprise-application" element={<EnterpriseApplication />} />
             <Route path="/services/digital-integration" element={<DigitalIntegration />} />
             <Route path="/services/cloud-operations" element={<CloudOperations />} />
             <Route path="/services/process-automation" element={<ProcessAutomation />} />
-            <Route path="/services/quality-engineering" element={<QualityEngineering />} />
+            <Route path="/services/quality-engineering" element={<QualityEngineering />} /> */}
+
+            {/* Services Routes (DYNAMIC – uses ServiceDetails.jsx) */}
+<Route path="/services/:serviceName" element={<ServiceDetails />} />
+
             
             {/* Solutions Routes */}
             <Route path="/solutions/dynamics-365" element={<Dynamics365 />} />

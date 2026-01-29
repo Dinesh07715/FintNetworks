@@ -105,7 +105,7 @@ export default function Footer() {
             </li>
             <li>
               <button 
-                onClick={() => handleNavigation('/services/digital-integration')}
+                onClick={() => handleNavigation('/services/digital-experience')}
                 className="hover:text-blue-600 transition-colors text-left w-full"
               >
                 Digital Integration
@@ -121,7 +121,7 @@ export default function Footer() {
             </li>
             <li>
               <button 
-                onClick={() => handleNavigation('/services/process-automation')}
+                onClick={() => handleNavigation('/services/artificial-intelligence')}
                 className="hover:text-blue-600 transition-colors text-left w-full"
               >
                 Intelligent Process Automation

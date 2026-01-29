@@ -10,25 +10,29 @@ const slides = [
     title: "Digital Experience",
     description: "Our industry-leading digital experience services are designed to drive the brand engagement from strategy, operations to enablement while improving productivity and process efficiency to be effective in the current digital market.",
     bgColor: "bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50",
-    illustration: "digital-experience"
+    illustration: "digital-experience",
+    link: "/services/digital-experience" // Add your actual route
   },
   {
     title: "Artificial Intelligence",
     description: "Empower your enterprise with cutting-edge Artificial Intelligence solutions that transform data into actionable insights and drive intelligent automation across your business processes.",
     bgColor: "bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50",
-    illustration: "ai"
+    illustration: "ai",
+    link: "/services/artificial-intelligence" // Add your actual route
   },
   {
     title: "Data Analytics",
     description: "Unlock the power of your data with advanced analytics solutions that provide deep insights, predictive modeling, and real-time intelligence for strategic decision-making.",
     bgColor: "bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50",
-    illustration: "analytics"
+    illustration: "analytics",
+    link: "/services/data-analytics" // Add your actual route
   },
   {
     title: "Enterprise Application Services",
     description: "Modernize and scale your enterprise platforms with our comprehensive application services, delivering seamless integration, enhanced performance, and digital transformation.",
     bgColor: "bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50",
-    illustration: "enterprise"
+    illustration: "enterprise",
+    link: "/services/enterprise-application-services" // Add your actual route
   }
 ];
 
@@ -296,6 +300,17 @@ const EnterpriseIllustration = () => (
 );
 
 export default function Hero() {
+  const handleReadMore = (link) => {
+    // For React Router, uncomment this line:
+    // navigate(link);
+    
+    // For Next.js, use:
+    // router.push(link);
+    
+    // For regular navigation:
+    window.location.href = link;
+  };
+
   return (
     <div className="relative w-full">
       <Swiper
@@ -326,7 +341,10 @@ export default function Hero() {
                     </p>
                     
                     <div className="pt-4">
-                      <button className="group relative inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-md shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+                      <button 
+                        onClick={() => handleReadMore(slide.link)}
+                        className="group relative inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-md shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+                      >
                         <span>READ MORE</span>
                         <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

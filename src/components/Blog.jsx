@@ -1,12 +1,39 @@
 import { Link } from "react-router-dom";
-import { blogs } from "../data/blogs";
+
+/* BLOG LIST DATA (same source as BlogDetail.jsx) */
+const blogs = [
+  {
+    id: 1,
+    title: "LLM Poisoning - Part 2: Defense Strategies – Building Resilient AI",
+    date: "Dec 18, 2025",
+    author: "Team Fint",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    id: 2,
+    title:
+      "Engineering AI Guardrails: Designing and Defending Trustworthy Systems",
+    date: "Nov 11, 2025",
+    author: "Our Sr Full Stack Developer (AI) - Sai Karthik Vemuri",
+    image:
+      "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?q=80&w=1200&auto=format&fit=crop",
+  },
+  {
+    id: 3,
+    title: "LLM Poisoning - Part 1: The Hidden Threat to AI Systems",
+    date: "Oct 28, 2025",
+    author: "Team Fint",
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+  },
+];
 
 export default function Blog() {
   return (
     <>
       {/* INTERNAL CSS */}
       <style>{`
-        /* Fade-up on load */
         @keyframes fadeUp {
           from {
             opacity: 0;
@@ -23,7 +50,6 @@ export default function Blog() {
           animation: fadeUp 0.9s ease-out forwards;
         }
 
-        /* Section indicator */
         @keyframes moveDotSlow {
           0% { left: 6%; }
           50% { left: 82%; }
@@ -49,7 +75,6 @@ export default function Blog() {
           animation: moveDotSlow 3.6s ease-in-out infinite;
         }
 
-        /* Read More button (hidden by default) */
         .read-more-btn {
           display: inline-flex;
           align-items: center;
@@ -68,31 +93,12 @@ export default function Blog() {
           text-decoration: none;
         }
 
-        .read-more-btn span {
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          background: white;
-          color: #ef4444;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 700;
-          transition: transform 0.3s ease;
-        }
-
-        /* Show button on card hover */
         .blog-card:hover .read-more-btn {
           opacity: 1;
           transform: translateY(0);
           pointer-events: auto;
         }
 
-        .read-more-btn:hover span {
-          transform: rotate(90deg);
-        }
-
-        /* Title hover */
         .blog-title {
           cursor: pointer;
           transition: color 0.3s ease;
@@ -105,13 +111,11 @@ export default function Blog() {
 
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-
-          {/* Section Header */}
+          {/* Header */}
           <div className="text-center mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-primary">
               FINT – Techtalk – Blog
             </h2>
-
             <div className="indicator">
               <span></span>
             </div>
@@ -122,7 +126,7 @@ export default function Blog() {
             {blogs.map((blog, index) => (
               <div
                 key={blog.id}
-                className="blog-card group relative fade-up"
+                className="blog-card relative fade-up"
                 style={{ animationDelay: `${index * 160}ms` }}
               >
                 {/* Image */}
@@ -134,36 +138,28 @@ export default function Blog() {
                   />
                 </div>
 
-                {/* Floating content */}
-                <div
-                  className="relative mx-6 -mt-16 bg-white
-                             rounded-2xl p-6
-                             shadow-lg
-                             transition-all duration-500 ease-out
-                             group-hover:-translate-y-2
-                             group-hover:shadow-2xl"
-                >
+                {/* Content */}
+                <div className="relative mx-6 -mt-16 bg-white rounded-2xl p-6 shadow-lg">
                   <p className="text-sm text-gray-500 mb-2">
                     {blog.author} | {blog.date}
                   </p>
 
-                  {/* ✅ TITLE IS NOW CLICKABLE */}
-                  <Link to={`/blog/${blog.id}`}>
+                  <Link to={`/insights/blog/${blog.id}`}>
                     <h3 className="blog-title text-lg font-semibold leading-snug">
                       {blog.title}
                     </h3>
                   </Link>
 
-                  {/* Read More button */}
-                  <Link to={`/blog/${blog.id}`} className="read-more-btn">
-                    Read More
-                    <span>+</span>
+                  <Link
+                    to={`/insights/blog/${blog.id}`}
+                    className="read-more-btn"
+                  >
+                    Read More <span>+</span>
                   </Link>
                 </div>
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </>
