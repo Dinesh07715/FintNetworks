@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
+
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
@@ -51,25 +53,28 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-white via-gray-50 to-white shadow-2xl backdrop-blur-md border-b border-gray-200/50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24 px-4">
           
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-3 group">
               {/* Arvish Consulting Logo Image */}
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=50&h=50&fit=crop&crop=center"
-                alt="Arvish Consulting Logo"
-                className="w-12 h-12 rounded-full transition-transform group-hover:scale-105"
-              />
-              <span className="text-3xl font-bold text-[#1e2875] tracking-tight">Arvish Consulting</span>
+  src="/arvish-logo.jpeg"
+  alt="Arvish Consulting Logo"
+  className="w-16 h-16 rounded-full transition-transform group-hover:scale-110 shadow-md"
+/>
+
+
+
+              <span className="text-2xl font-bold tracking-tight font-serif bg-gradient-to-r from-[#1e2875] to-[#3b5998] bg-clip-text text-transparent">Arvish Consulting</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center justify-center flex-1 gap-2">
             {Object.keys(menuItems).map((menu) => (
               <div
                 key={menu}
@@ -78,7 +83,7 @@ const Navbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className={`px-4 py-2 text-[15px] font-medium transition-colors flex items-center gap-1 ${
+                  className={`px-4 py-2 text-[15px] font-semibold transition-all duration-300 flex items-center gap-1 ${
                     activeDropdown === menu ? 'text-red-600' : 'text-slate-700 hover:text-red-600'
                   }`}
                 >
@@ -114,21 +119,21 @@ const Navbar = () => {
             {/* Contact Us Button */}
             <Link
               to="/contact"
-              className="ml-2 px-4 py-2 text-[15px] font-medium text-slate-700 hover:text-[#1e2875] transition-colors"
+              className="ml-2 px-4 py-2 text-[15px] font-medium text-slate-700 hover:text-[#1e2875] transition-colors rounded-md hover:bg-gray-100/50"
             >
               Contact Us
             </Link>
           </nav>
 
           {/* Great Place to Work Badge */}
-          <div className="hidden lg:block">
-            <div className="relative">
-              <div className="bg-gradient-to-br from-red-600 to-red-700 text-white px-4 py-2 rounded-t-lg text-center shadow-lg">
-                <div className="text-xs font-bold leading-tight">Great<br/>Place<br/>To<br/>Work</div>
+          <div className="hidden lg:block ml-4">
+            <div className="relative transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-gradient-to-br from-red-600 to-red-700 text-white px-3 py-1 rounded-t-lg text-center shadow-lg">
+                <div className="text-[10px] font-bold leading-tight">Great<br/>Place<br/>To<br/>Work</div>
               </div>
-              <div className="bg-gradient-to-br from-blue-900 to-indigo-900 text-white px-4 py-1 rounded-b-lg text-center">
-                <div className="text-[10px] font-semibold">Certified</div>
-                <div className="text-[8px]">MAY 2025 - MAY 2026</div>
+              <div className="bg-gradient-to-br from-blue-900 to-indigo-900 text-white px-3 py-1 rounded-b-lg text-center shadow-md">
+                <div className="text-[8px] font-semibold">Certified</div>
+                <div className="text-[6px]">MAY 2025 - MAY 2026</div>
               </div>
             </div>
           </div>

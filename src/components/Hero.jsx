@@ -9,28 +9,32 @@ const slides = [
   {
     title: "Digital Experience",
     description: "Our industry-leading digital experience services are designed to drive the brand engagement from strategy, operations to enablement while improving productivity and process efficiency to be effective in the current digital market.",
-    bgColor: "bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50",
+    bgImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    overlay: "from-slate-900/80 via-blue-900/70 to-indigo-900/80",
     illustration: "digital-experience",
     link: "/services/digital-experience" // Add your actual route
   },
   {
     title: "Artificial Intelligence",
     description: "Empower your enterprise with cutting-edge Artificial Intelligence solutions that transform data into actionable insights and drive intelligent automation across your business processes.",
-    bgColor: "bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-50",
+    bgImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    overlay: "from-violet-900/80 via-purple-900/70 to-indigo-900/80",
     illustration: "ai",
     link: "/services/artificial-intelligence" // Add your actual route
   },
   {
     title: "Data Analytics",
     description: "Unlock the power of your data with advanced analytics solutions that provide deep insights, predictive modeling, and real-time intelligence for strategic decision-making.",
-    bgColor: "bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50",
+    bgImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    overlay: "from-emerald-900/80 via-teal-900/70 to-cyan-900/80",
     illustration: "analytics",
     link: "/services/data-analytics" // Add your actual route
   },
   {
     title: "Enterprise Application Services",
     description: "Modernize and scale your enterprise platforms with our comprehensive application services, delivering seamless integration, enhanced performance, and digital transformation.",
-    bgColor: "bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50",
+    bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80",
+    overlay: "from-orange-900/80 via-amber-900/70 to-yellow-900/80",
     illustration: "enterprise",
     link: "/services/enterprise-application-services" // Add your actual route
   }
@@ -325,34 +329,46 @@ export default function Hero() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className={`h-full w-full ${slide.bgColor} relative overflow-hidden`}>
+            <div className="h-full w-full relative overflow-hidden">
+              {/* Premium Background Image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${slide.bgImage})` }}
+              />
+              {/* Premium Overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${slide.overlay}`} />
+
               {/* Content Container */}
               <div className="relative h-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full py-12">
-                  
+
                   {/* Left Content */}
-                  <div className="space-y-6 animate-slide-in-left">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                      {slide.title}
+                  <div className="space-y-8 animate-slide-in-left">
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
+                      <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+                        {slide.title}
+                      </span>
                     </h1>
-                    
-                    <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl">
+
+                    <p className="text-xl sm:text-2xl text-gray-200 leading-relaxed max-w-2xl font-light">
                       {slide.description}
                     </p>
-                    
-                    <div className="pt-4">
-                      <button 
+
+                    <div className="pt-6">
+                      <button
                         onClick={() => handleReadMore(slide.link)}
-                        className="group relative inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-md shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+                        className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm hover:from-white/30 hover:to-white/20 text-white font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-500 border border-white/20"
                       >
-                        <span>READ MORE</span>
-                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <span className="text-lg">EXPLORE NOW</span>
+                        <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
+                        {/* Premium Button Glow */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-sm"></div>
                       </button>
                     </div>
                   </div>
-                  
+
                   {/* Right Illustration */}
                   <div className="hidden lg:flex items-center justify-center animate-fade-in">
                     {slide.illustration === 'digital-experience' && <DigitalExperienceIllustration />}
@@ -362,43 +378,76 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white/20 to-transparent pointer-events-none"></div>
+
+              {/* Premium Decorative Elements */}
+              <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
+              {/* Floating Particles */}
+              <div className="absolute inset-0 pointer-events-none">
+                {[...Array(8)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-2 h-2 bg-white/30 rounded-full animate-pulse"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 3}s`,
+                      animationDuration: `${2 + Math.random() * 3}s`
+                    }}
+                  />
+                ))}
+              </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
       
-      {/* Custom Navigation Styling */}
+      {/* Premium Navigation Styling */}
       <style jsx>{`
         :global(.swiper-button-next),
         :global(.swiper-button-prev) {
-          color: #1e293b !important;
-          background: white;
-          width: 48px !important;
-          height: 48px !important;
-          border-radius: 50%;
-          box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+          color: #ffffff !important;
+          background: rgba(255, 255, 255, 0.15) !important;
+          backdrop-filter: blur(10px) !important;
+          border: 1px solid rgba(255, 255, 255, 0.2) !important;
+          width: 56px !important;
+          height: 56px !important;
+          border-radius: 50% !important;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+          transition: all 0.3s ease !important;
         }
-        
+
+        :global(.swiper-button-next:hover),
+        :global(.swiper-button-prev:hover) {
+          background: rgba(255, 255, 255, 0.25) !important;
+          transform: scale(1.05) !important;
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+        }
+
         :global(.swiper-button-next:after),
         :global(.swiper-button-prev:after) {
-          font-size: 20px !important;
-          font-weight: 900;
+          font-size: 22px !important;
+          font-weight: 900 !important;
         }
-        
+
         :global(.swiper-pagination-bullet) {
-          width: 12px !important;
-          height: 12px !important;
-          background: #cbd5e1 !important;
+          width: 14px !important;
+          height: 14px !important;
+          background: rgba(255, 255, 255, 0.4) !important;
           opacity: 1 !important;
+          border: 1px solid rgba(255, 255, 255, 0.3) !important;
+          transition: all 0.3s ease !important;
         }
-        
+
         :global(.swiper-pagination-bullet-active) {
-          background: #dc2626 !important;
-          width: 32px !important;
-          border-radius: 6px !important;
+          background: #ffffff !important;
+          width: 40px !important;
+          border-radius: 8px !important;
+          box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3) !important;
+        }
+
+        :global(.swiper-pagination-bullet:hover) {
+          background: rgba(255, 255, 255, 0.6) !important;
+          transform: scale(1.1) !important;
         }
       `}</style>
     </div>

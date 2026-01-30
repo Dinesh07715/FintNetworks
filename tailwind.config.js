@@ -33,6 +33,9 @@ export default {
         'dash': 'dash 3s linear infinite',
         'draw-line': 'draw-line 2s ease-in-out forwards',
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
