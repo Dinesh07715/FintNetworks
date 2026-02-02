@@ -37,6 +37,20 @@ export default function WhyChoose() {
           justify-content: center;
         }
 
+        @media (max-width: 768px) {
+          .visual-wrapper {
+            width: 380px;
+            height: 380px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .visual-wrapper {
+            width: 300px;
+            height: 300px;
+          }
+        }
+
         /* TRANSPARENT RINGS */
         .ring {
           position: absolute;

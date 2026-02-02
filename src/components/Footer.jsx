@@ -218,11 +218,11 @@ export default function Footer() {
           </div>
           
           {/* Certifications */}
-          <div className="space-y-4 mb-6">
+          <div className="space-y-3 sm:space-y-4 mb-6">
             {/* CMMI DEV/5 */}
-            <div className="bg-white p-3 rounded-lg shadow-sm flex items-center gap-3">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none">
+            <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm flex items-center gap-2 sm:gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 100 100" fill="none">
                   <circle cx="50" cy="50" r="45" stroke="white" strokeWidth="3"/>
                   <circle cx="50" cy="50" r="35" stroke="white" strokeWidth="2"/>
                   <circle cx="50" cy="50" r="25" stroke="white" strokeWidth="2"/>
@@ -230,35 +230,35 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <p className="font-bold text-sm text-slate-800">CMMI DEV/5</p>
+                <p className="font-bold text-xs sm:text-sm text-slate-800">CMMI DEV/5</p>
                 <p className="text-xs text-slate-600">Capability Maturity Model</p>
               </div>
             </div>
-            
+
             {/* ISO 27001:2013 */}
-            <div className="bg-white p-3 rounded-lg shadow-sm flex items-center gap-3">
-              <div className="w-12 h-12 bg-blue-700 rounded flex items-center justify-center flex-shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none">
+            <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm flex items-center gap-2 sm:gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-700 rounded flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 100 100" fill="none">
                   <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="3"/>
                   <text x="50" y="60" fontSize="32" fontWeight="bold" fill="white" textAnchor="middle">ISO</text>
                 </svg>
               </div>
               <div>
-                <p className="font-bold text-sm text-slate-800">ISO 27001:2013</p>
+                <p className="font-bold text-xs sm:text-sm text-slate-800">ISO 27001:2013</p>
                 <p className="text-xs text-slate-600">Information Security</p>
               </div>
             </div>
-            
+
             {/* ISO 9001:2015 */}
-            <div className="bg-white p-3 rounded-lg shadow-sm flex items-center gap-3">
-              <div className="w-12 h-12 bg-blue-700 rounded flex items-center justify-center flex-shrink-0">
-                <svg className="w-8 h-8" viewBox="0 0 100 100" fill="none">
+            <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm flex items-center gap-2 sm:gap-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-700 rounded flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 100 100" fill="none">
                   <circle cx="50" cy="50" r="40" stroke="white" strokeWidth="3"/>
                   <text x="50" y="60" fontSize="32" fontWeight="bold" fill="white" textAnchor="middle">ISO</text>
                 </svg>
               </div>
               <div>
-                <p className="font-bold text-sm text-slate-800">ISO 9001:2015</p>
+                <p className="font-bold text-xs sm:text-sm text-slate-800">ISO 9001:2015</p>
                 <p className="text-xs text-slate-600">Quality Management</p>
               </div>
             </div>

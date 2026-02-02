@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = {
     'About Us': [
@@ -49,6 +48,15 @@ const Navbar = () => {
   };
 
   const closeDropdown = () => {
+    setActiveDropdown(null);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
     setActiveDropdown(null);
   };
 
@@ -139,7 +147,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors">
+          <button
+            onClick={toggleMobileMenu}
+            className="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors"
+          >
             <svg className="w-6 h-6 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -164,6 +175,61 @@ const Navbar = () => {
           animation: fade-in-down 0.2s ease-out;
         }
       `}</style>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+          <div className="max-w-7xl mx-auto px-6 py-4">
+            <nav className="space-y-2">
+              {Object.keys(menuItems).map((menu) => (
+                <div key={menu} className="border-b border-gray-100 pb-2">
+                  <button
+                    onClick={() => setActiveDropdown(activeDropdown === menu ? null : menu)}
+                    className="w-full flex items-center justify-between py-3 px-4 text-left font-semibold text-slate-700 hover:text-red-600 transition-colors"
+                  >
+                    {menu}
+                    <svg
+                      className={`w-5 h-5 transition-transform ${activeDropdown === menu ? 'rotate-180' : ''}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+
+                  {/* Mobile Dropdown */}
+                  {activeDropdown === menu && (
+                    <div className="ml-4 mt-2 space-y-1">
+                      {menuItems[menu].map((item, index) => (
+                        <Link
+                          key={index}
+                          to={item.link}
+                          onClick={closeMobileMenu}
+                          className="block py-2 px-4 text-slate-600 hover:text-[#1e2875] hover:bg-slate-50 rounded-md transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {/* Contact Us Button for Mobile */}
+              <div className="pt-4">
+                <Link
+                  to="/contact"
+                  onClick={closeMobileMenu}
+                  className="block w-full text-center py-3 px-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

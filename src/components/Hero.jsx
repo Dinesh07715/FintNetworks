@@ -344,13 +344,13 @@ export default function Hero() {
 
                   {/* Left Content */}
                   <div className="space-y-8 animate-slide-in-left">
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-tight tracking-tight">
                       <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
                         {slide.title}
                       </span>
                     </h1>
 
-                    <p className="text-xl sm:text-2xl text-gray-200 leading-relaxed max-w-2xl font-light">
+                    <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl font-light">
                       {slide.description}
                     </p>
 

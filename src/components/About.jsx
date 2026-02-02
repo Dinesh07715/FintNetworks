@@ -88,6 +88,18 @@ export default function About() {
           animation: floatMain 7s ease-in-out infinite;
         }
 
+        @media (max-width: 768px) {
+          .center-image {
+            width: 180px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .center-image {
+            width: 140px;
+          }
+        }
+
         @keyframes floatMain {
           0% { transform: translateY(0); }
           50% { transform: translateY(-14px); }

@@ -90,7 +90,7 @@ function AppContent() {
         <div className="min-h-screen bg-white flex flex-col">
           <Navbar />
 
-          <main className="flex-grow">
+          <main className="flex-grow px-4 sm:px-6 lg:px-8">
             <Routes>
               {/* Home */}
               <Route path="/" element={<Home />} />
